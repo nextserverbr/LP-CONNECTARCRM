@@ -1,0 +1,182 @@
+# ============================================
+# Configurações de Segurança - Apache
+# ============================================
+
+# Ativar RewriteEngine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+</IfModule>
+
+# ============================================
+# Headers de Segurança
+# ============================================
+
+<IfModule mod_headers.c>
+    # Previne MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Previne clickjacking
+    Header set X-Frame-Options "DENY"
+    
+    # Ativa proteção XSS do navegador
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Política de referrer
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissões de recursos
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    
+    # Content Security Policy (ajuste conforme necessário)
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+    
+    # Strict Transport Security (HTTPS only - descomente em produção com HTTPS)
+    # Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# ============================================
+# Proteção de Arquivos Sensíveis
+# ============================================
+
+# Bloquear acesso a arquivos de configuração
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|conf|config)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Proteger arquivos de backup
+<FilesMatch "\.(bak|backup|old|orig|save|swp|tmp)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Proteger arquivos de sistema
+<FilesMatch "^\.">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# ============================================
+# Prevenir Listagem de Diretórios
+# ============================================
+
+Options -Indexes
+
+# ============================================
+# Proteção contra Hotlinking
+# ============================================
+
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_REFERER} !^$
+    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?seudominio\.com [NC]
+    # Descomente a linha abaixo para bloquear hotlinking de imagens
+    # RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F,L]
+</IfModule>
+
+# ============================================
+# Compressão GZIP
+# ============================================
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# ============================================
+# Cache de Navegador
+# ============================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Imagens
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    
+    # CSS e JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    
+    # Fontes
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    
+    # HTML
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# ============================================
+# Prevenir Acesso a Métodos HTTP Perigosos
+# ============================================
+
+<LimitExcept GET POST HEAD>
+    Order Allow,Deny
+    Deny from all
+</LimitExcept>
+
+# ============================================
+# Proteção contra SQL Injection (básica)
+# ============================================
+
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# ============================================
+# Proteção contra User-Agent Maliciosos
+# ============================================
+
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+    RewriteCond %{HTTP_USER_AGENT} ^(-|\.|') [OR]
+    RewriteCond %{HTTP_USER_AGENT} (libwww-perl|wget|python|nikto|curl|scan|java|winhttp|clshttp|loader) [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} (;|<|>|'|"|\)|\(|%0A|%0D|%27|%3C|%3E|%00) [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# ============================================
+# Limitar Tamanho de Upload
+# ============================================
+
+# Ajuste conforme necessário (exemplo: 10MB)
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+
+# ============================================
+# Desabilitar Execução de Scripts em Uploads
+# ============================================
+
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_FILENAME} \.(php|phtml|php3|php4|php5|pl|py|jsp|asp|sh|cgi)$
+    RewriteCond %{REQUEST_URI} ^/uploads/
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# ============================================
+# Página de Erro Personalizada (opcional)
+# ============================================
+
+# ErrorDocument 403 /error.html
+# ErrorDocument 404 /error.html
+# ErrorDocument 500 /error.html
+
+# ============================================
+# Charset UTF-8
+# ============================================
+
+AddDefaultCharset UTF-8
+
+# ============================================
+# Desabilitar Assinatura do Servidor
+# ============================================
+
+ServerSignature Off

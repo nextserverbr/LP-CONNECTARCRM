@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ConnectarCRM - O CRM completo para impulsionar suas vendas. Gerencie clientes, oportunidades e feche mais negócios.">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    
+    <title>ConnectarCRM - Transforme suas vendas em resultados</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <h2>Connectar<span class="logo-accent">CRM</span></h2>
+            </div>
+            <ul class="nav__menu" id="nav-menu">
+                <li><a href="#inicio" class="nav__link">Início</a></li>
+                <li><a href="#recursos" class="nav__link">Recursos</a></li>
+                <li><a href="#como-funciona" class="nav__link">Como Funciona</a></li>
+                <li><a href="#depoimentos" class="nav__link">Depoimentos</a></li>
+                <li><a href="#contato" class="nav__link">Contato</a></li>
+            </ul>
+            <div class="nav__buttons">
+                <a href="#contato" class="btn btn--primary">Começar Agora</a>
+                <button class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero__container container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    Transforme suas <span class="gradient-text">vendas</span> em resultados reais
+                </h1>
+                <p class="hero__description">
+                    O CRM completo que sua equipe de vendas precisa. Gerencie clientes, acompanhe oportunidades e feche mais negócios com ferramentas poderosas e intuitivas.
+                </p>
+                <div class="hero__cta">
+                    <a href="#contato" class="btn btn--primary btn--large">Teste Grátis por 14 dias</a>
+                    <a href="#recursos" class="btn btn--secondary btn--large">Ver Recursos</a>
+                </div>
+                <div class="hero__stats">
+                    <div class="stat">
+                        <h3>10K+</h3>
+                        <p>Empresas confiam</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50K+</h3>
+                        <p>Vendedores ativos</p>
+                    </div>
+                    <div class="stat">
+                        <h3>98%</h3>
+                        <p>Satisfação dos clientes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__image">
+                <div class="hero__dashboard">
+                    <div class="dashboard__header">
+                        <div class="dashboard__dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="dashboard__content">
+                        <div class="dashboard__sidebar"></div>
+                        <div class="dashboard__main">
+                            <div class="dashboard__card"></div>
+                            <div class="dashboard__card"></div>
+                            <div class="dashboard__card"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="recursos">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Recursos que impulsionam suas vendas</h2>
+                <p class="section__description">Tudo que você precisa para gerenciar e aumentar suas vendas em um só lugar</p>
+            </div>
+            <div class="features__grid">
+                <div class="feature__card">
+                    <div class="feature__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature__title">Gestão de Clientes</h3>
+                    <p class="feature__description">Centralize todas as informações dos seus clientes em um único lugar. Histórico completo de interações, compras e preferências.</p>
+                </div>
+                <div class="feature__card">
+                    <div class="feature__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature__title">Pipeline de Vendas</h3>
+                    <p class="feature__description">Visualize e gerencie todas as suas oportunidades de venda em um pipeline intuitivo. Acompanhe cada etapa do funil de vendas.</p>
+                </div>
+                <div class="feature__card">
+                    <div class="feature__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="feature__title">Relatórios e Analytics</h3>
+                    <p class="feature__description">Tome decisões baseadas em dados com relatórios detalhados e dashboards personalizados. Acompanhe KPIs em tempo real.</p>
+                </div>
+                <div class="feature__card">
+                    <div class="feature__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="feature__title">Automação de Tarefas</h3>
+                    <p class="feature__description">Automatize processos repetitivos e economize tempo. Configure lembretes, follow-ups e ações automáticas.</p>
+                </div>
+                <div class="feature__card">
+                    <div class="feature__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature__title">Comunicação Integrada</h3>
+                    <p class="feature__description">Email, WhatsApp, telefone e chat integrados. Todas as comunicações com clientes em um só lugar.</p>
+                </div>
+                <div class="feature__card">
+                    <div class="feature__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3 class="feature__title">Multi-dispositivo</h3>
+                    <p class="feature__description">Acesse seu CRM de qualquer lugar. Disponível para desktop, tablet e mobile. Sincronização em tempo real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="como-funciona">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Como funciona</h2>
+                <p class="section__description">Em 3 passos simples, você começa a vender mais</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step__number">1</div>
+                    <h3 class="step__title">Cadastre sua equipe</h3>
+                    <p class="step__description">Configure sua conta e adicione sua equipe de vendas. O processo leva menos de 5 minutos.</p>
+                </div>
+                <div class="step">
+                    <div class="step__number">2</div>
+                    <h3 class="step__title">Importe seus clientes</h3>
+                    <p class="step__description">Importe seus contatos existentes ou comece do zero. Nossa plataforma se adapta ao seu negócio.</p>
+                </div>
+                <div class="step">
+                    <div class="step__number">3</div>
+                    <h3 class="step__title">Comece a vender mais</h3>
+                    <p class="step__description">Use as ferramentas de gestão e automação para aumentar suas vendas e melhorar seus resultados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="depoimentos">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">O que nossos clientes dizem</h2>
+                <p class="section__description">Empresas que transformaram suas vendas com o ConnectarCRM</p>
+            </div>
+            <div class="testimonials__grid">
+                <div class="testimonial__card">
+                    <div class="testimonial__stars">★★★★★</div>
+                    <p class="testimonial__text">"O ConnectarCRM revolucionou nossa equipe de vendas. Aumentamos nosso faturamento em 40% no primeiro trimestre. A interface é intuitiva e as automações economizam horas do nosso dia."</p>
+                    <div class="testimonial__author">
+                        <div class="testimonial__avatar"></div>
+                        <div>
+                            <h4>Maria Silva</h4>
+                            <p>Diretora de Vendas, TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial__card">
+                    <div class="testimonial__stars">★★★★★</div>
+                    <p class="testimonial__text">"Finalmente um CRM que realmente funciona para vendas B2B. O pipeline visual nos ajuda a identificar gargalos e oportunidades. Recomendo para qualquer equipe de vendas séria."</p>
+                    <div class="testimonial__author">
+                        <div class="testimonial__avatar"></div>
+                        <div>
+                            <h4>João Santos</h4>
+                            <p>CEO, VendasPro</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial__card">
+                    <div class="testimonial__stars">★★★★★</div>
+                    <p class="testimonial__text">"A integração com WhatsApp e email foi um diferencial. Nossa equipe consegue acompanhar todas as interações com clientes em um só lugar. Suporte excelente também!"</p>
+                    <div class="testimonial__author">
+                        <div class="testimonial__avatar"></div>
+                        <div>
+                            <h4>Ana Costa</h4>
+                            <p>Gerente Comercial, Inovação SA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2 class="cta__title">Pronto para transformar suas vendas?</h2>
+                <p class="cta__description">Comece hoje mesmo e veja a diferença em 14 dias. Sem compromisso, sem cartão de crédito.</p>
+                <a href="#contato" class="btn btn--primary btn--large">Começar Teste Grátis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="contact__grid">
+                <div class="contact__info">
+                    <h2 class="contact__title">Entre em contato</h2>
+                    <p class="contact__description">Preencha o formulário e nossa equipe entrará em contato em até 24 horas para apresentar o ConnectarCRM.</p>
+                    <div class="contact__details">
+                        <div class="contact__item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <div>
+                                <h4>Endereço</h4>
+                                <p>São Paulo, SP - Brasil</p>
+                            </div>
+                        </div>
+                        <div class="contact__item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <div>
+                                <h4>Telefone</h4>
+                                <p>(11) 9999-9999</p>
+                            </div>
+                        </div>
+                        <div class="contact__item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contato@connectarcrm.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact__form" id="contact-form">
+                    <div class="form__group">
+                        <label for="name">Nome completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="company">Empresa</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form__group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--large btn--full">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3>Connectar<span class="logo-accent">CRM</span></h3>
+                    <p>O CRM completo para impulsionar suas vendas e transformar seu negócio.</p>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4>Produto</h4>
+                        <ul>
+                            <li><a href="#recursos">Recursos</a></li>
+                            <li><a href="#como-funciona">Como Funciona</a></li>
+                            <li><a href="#contato">Preços</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="#">Sobre Nós</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Carreiras</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Suporte</h4>
+                        <ul>
+                            <li><a href="#">Central de Ajuda</a></li>
+                            <li><a href="#contato">Contato</a></li>
+                            <li><a href="#">Documentação</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 ConnectarCRM. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Security Scripts -->
+    <script src="security-config.js"></script>
+    <script src="security.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
